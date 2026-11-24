@@ -1,0 +1,25 @@
+# secrets
+.env
+*.env
+serviceAccountKey*.json
+
+# python
+venv/
+__pycache__/
+*.pyc
+
+# generated and private data
+backend/snapshots/
+ai/**/snapshots/
+ai/**/captured_visitors/
+ai/door-lock/known_faces/
+ai/**/embeddings.pkl
+ai/household/dataset/
+
+# large model files
+*.h5
+yolov8n.pt
+
+# node (for the app)
+node_modules/
+.expo/

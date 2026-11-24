@@ -1,13 +1,13 @@
 import cv2
+import os
 import requests
 import time
 import numpy as np
 from tensorflow.keras.models import load_model
+from config import CHAT_ID, TOKEN
 
 # --- CONFIG ---
-TOKEN = "7811526566:AAGfByOBOSDfIq6PNSR5B_tAzFgy9Dv7rko"
-CHAT_ID = "1446473042"
-IP_CAMERA_URL = "http://10.101.4.49:2253/video"
+IP_CAMERA_URL = os.getenv("IP_CAMERA_URL", "")
 
 # --- MODEL ---
 model = load_model("activity_model.h5")
@@ -61,7 +61,7 @@ while True:
     # 2️⃣ Update Status
     if prediction == "theft":
         latest_status = "⚠️ Theft detected"
-        
+
         # Send alert every 10 seconds max
         if time.time() - last_alert_time > 500:
             send_message("🚨 ALERT: Theft detected in kitchen")

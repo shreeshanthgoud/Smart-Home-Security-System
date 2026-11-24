@@ -15,7 +15,7 @@ from storage_utils import save_snapshot, upload_cloudinary
 from ai_utils import generate_response
 
 # Added ?fps=15 to help prevent lag and dropped frames
-IP_WEBCAM_URL = "http://10.122.20.39:8080/video?fps=15"
+IP_WEBCAM_URL = os.getenv("IP_CAMERA_URL", "")
 
 
 # ==========================

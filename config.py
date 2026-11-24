@@ -1,16 +1,12 @@
-# config.py
+import os
+from dotenv import load_dotenv
 
-# Telegram
-TOKEN = "7811526566:AAGfByOBOSDfIq6PNSR5B_tAzFgy9Dv7rko"
-CHAT_ID = "1446473042"
+load_dotenv()
 
-# Gemini
-GEMINI_API_KEY = "AIzaSyCWsjqJa-UQD0GiwhRMwnoJQqd_ogBFJyo"
-
-# Cloudinary (optional)
-CLOUD_NAME = "dlzgede1z"
-API_KEY = "346296148647431"
-API_SECRET = "lD9QQRZ_n_QJwralgbcD30DbcqE"
-
-# User
-USER_NAME = "Shreeshanth"
+TOKEN = os.getenv("TELEGRAM_TOKEN", "")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+CLOUD_NAME = os.getenv("CLOUDINARY_CLOUD_NAME", "")
+API_KEY = os.getenv("CLOUDINARY_API_KEY", "")
+API_SECRET = os.getenv("CLOUDINARY_API_SECRET", "")
+USER_NAME = os.getenv("USER_NAME", "Shreeshanth")
